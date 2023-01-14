@@ -7,6 +7,14 @@ It is written in Java and uses the Spring Boot framework.
 The project was created as a coding exercise to practice TDD. 
 It uses the decorator design pattern to allow for easy extension of the beverage.
 
+# Build
+
+To build the project, run the following command:
+
+```shell
+./mvnw clean package
+```
+
 # Get a cup of coffee
 
 
