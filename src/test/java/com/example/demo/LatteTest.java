@@ -41,7 +41,7 @@ public class LatteTest {
   @Test
   void shouldReturnLatte() throws Exception {
     //arrange
-    Recipe recipe = new Recipe(CoffeeType.LATTE, 1, 2);
+    Recipe recipe = new Recipe(1, 2);
     Coffee coffee = Brewer.brewCoffee(recipe);
     String json = writer.writeValueAsString(coffee);
     MockHttpServletRequestBuilder request = MockMvcRequestBuilders

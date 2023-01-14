@@ -7,9 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Builder
 @Getter @Setter
-@NoArgsConstructor
 public class Brewer {
   public static Coffee brewCoffee(Recipe recipe) {
 

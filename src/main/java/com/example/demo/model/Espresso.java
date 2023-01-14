@@ -1,13 +1,11 @@
 package com.example.demo.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Objects;
 
 public class Espresso implements Coffee {
-  private CoffeeType type;
-  private Double cost;
-  private String ingredients;
+  private final CoffeeType type;
+  private final Double cost;
+  private final String ingredients;
 
   public Espresso() {
     this.type = CoffeeType.ESPRESSO;
@@ -38,6 +36,11 @@ public class Espresso implements Coffee {
     return coffee.getType().equals(getType()) &&
             coffee.getCost().equals(getCost()) &&
             coffee.getIngredients().equals(getIngredients());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getType());
   }
 
 }

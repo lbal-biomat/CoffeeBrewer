@@ -28,7 +28,7 @@ class ControllerTest {
   @Test
   void testBrewCoffee() {
     // arrange
-    Recipe recipe = new Recipe(CoffeeType.ESPRESSO, 0, 0);
+    Recipe recipe = new Recipe(0, 0);
     Coffee coffee = Brewer.brewCoffee(recipe);
     when(brewerService.brewCoffee(CoffeeType.ESPRESSO)).thenReturn(coffee);
 
