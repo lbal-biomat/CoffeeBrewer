@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import com.example.demo.controller.BrewerController;
+import com.example.demo.model.Coffee;
+import com.example.demo.model.Espresso;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -21,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class CoffeeTest {
+class EspressoTest {
   @Autowired
   BrewerController brewerController;
   @Autowired
@@ -38,12 +40,14 @@ class CoffeeTest {
   @Test
   void shouldReturnCoffee() throws Exception {
     //arrange
+    Coffee coffee = new Espresso();
+    String json = writer.writeValueAsString(coffee);
     MockHttpServletRequestBuilder request = MockMvcRequestBuilders
             .get("/coffee/{name}", "espresso");
 
     ResultMatcher expectedStatus = status().isOk();
     ResultMatcher expectedContentType = content().contentType(MediaType.APPLICATION_JSON);
-    ResultMatcher expectedBody = content().json("{\"type\":\"espresso\"}");
+    ResultMatcher expectedBody = content().json(json);
 
     //act
     mockMvc.perform(request)

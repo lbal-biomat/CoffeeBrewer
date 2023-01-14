@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Brewer;
 import com.example.demo.model.Coffee;
+import com.example.demo.model.CoffeeType;
 import com.example.demo.service.BrewerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,12 +27,12 @@ class ControllerTest {
   @Test
   void testBrewCoffee() {
     // arrange
-    Coffee coffee = Brewer.brewCoffee("espresso");
-    when(brewerService.brewCoffee("espresso")).thenReturn(coffee);
+    Coffee coffee = Brewer.brewCoffee(CoffeeType.ESPRESSO);
+    when(brewerService.brewCoffee(CoffeeType.ESPRESSO)).thenReturn(coffee);
 
 
     // act
-    ResponseEntity<Coffee> coffeeRE = brewerController.brewCoffee("espresso");
+    ResponseEntity<Coffee> coffeeRE = brewerController.brewCoffee("ESPRESSO");
 
     // assert
     assertEquals(coffee, coffeeRE.getBody());

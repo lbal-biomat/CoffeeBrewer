@@ -5,17 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Espresso implements Coffee {
-  private String type;
+  private CoffeeType type;
   private Double cost;
   private List<String> ingredients;
 
   public Espresso() {
-    this.type = "Espresso";
+    this.type = CoffeeType.ESPRESSO;
     this.cost = 3.50;
     this.ingredients = new ArrayList<>();
   }
 
-  public String getType() {
+  public CoffeeType getType() {
     return this.type;
   }
 

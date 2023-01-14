@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Coffee;
+import com.example.demo.model.CoffeeType;
 import com.example.demo.service.BrewerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class BrewerController {
 
   @GetMapping("/coffee/{type}")
   public ResponseEntity<Coffee> brewCoffee(@PathVariable String type) {
-    Coffee coffee = brewerService.brewCoffee(type);
+    Coffee coffee = brewerService.brewCoffee(CoffeeType.valueOf(type.toUpperCase()));
     return ResponseEntity.ok(coffee);
   }
 }

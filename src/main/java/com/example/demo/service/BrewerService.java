@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Brewer;
 import com.example.demo.model.Coffee;
+import com.example.demo.model.CoffeeType;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,7 +11,7 @@ public class BrewerService {
 
 
 
-  public Coffee brewCoffee(String type) {
+  public Coffee brewCoffee(CoffeeType type) {
     return brewer.brewCoffee(type);
   }
 }
