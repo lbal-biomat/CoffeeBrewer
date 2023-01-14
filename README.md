@@ -1,9 +1,7 @@
 # CoffeeMachine
 
-# Get cup of coffee
-* **Title :**
+# Get a cup of coffee
 
-  Get cup of coffee.
 
 * **URL :**
 
@@ -17,7 +15,7 @@
 
   **Required:**
 
-  type=[string]
+  type=[ESPRESSO|CAPPUCCINO|LATTE]
 
 * **Success response content:**
   

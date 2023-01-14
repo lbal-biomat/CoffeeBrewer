@@ -20,8 +20,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -55,6 +54,7 @@ public class LatteTest {
             .andDo(MockMvcResultHandlers.print())
             .andExpect(expectedContentType)
             .andExpect(expectedBody)
+            .andExpect(jsonPath("$.type").value("LATTE"))
             .andExpect(expectedStatus);
 
   }
