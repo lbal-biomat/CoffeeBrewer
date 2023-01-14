@@ -15,6 +15,12 @@ To build the project, run the following command:
 ./mvnw clean package
 ```
 
+To run the test suite, run the following command:
+
+```shell
+./mvnw clean test
+```
+
 # Get a cup of coffee
 
 
