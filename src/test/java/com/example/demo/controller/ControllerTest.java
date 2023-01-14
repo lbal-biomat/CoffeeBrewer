@@ -29,7 +29,7 @@ class ControllerTest {
   void testBrewCoffee() {
     // arrange
     Recipe recipe = new Recipe(0, 0);
-    Coffee coffee = Brewer.brewCoffee(recipe);
+    Coffee coffee = Brewer.brewCoffee(recipe, CoffeeType.ESPRESSO);
     when(brewerService.brewCoffee(CoffeeType.ESPRESSO)).thenReturn(coffee);
 
 

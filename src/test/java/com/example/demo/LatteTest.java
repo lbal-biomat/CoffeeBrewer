@@ -41,7 +41,7 @@ public class LatteTest {
   void shouldReturnLatte() throws Exception {
     //arrange
     Recipe recipe = new Recipe(1, 2);
-    Coffee coffee = Brewer.brewCoffee(recipe);
+    Coffee coffee = Brewer.brewCoffee(recipe, CoffeeType.LATTE);
     String json = writer.writeValueAsString(coffee);
     MockHttpServletRequestBuilder request = MockMvcRequestBuilders
             .get("/coffee/{name}", "latte");

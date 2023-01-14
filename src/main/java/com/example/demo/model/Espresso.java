@@ -7,10 +7,10 @@ public class Espresso implements Coffee {
   private final Double cost;
   private final String ingredients;
 
-  public Espresso() {
-    this.type = CoffeeType.ESPRESSO;
+  public Espresso(CoffeeType coffeeType) {
+    this.type = coffeeType;
     this.cost = 3.50;
-    this.ingredients = "";
+    this.ingredients = "Espresso";
   }
 
   public CoffeeType getType() {

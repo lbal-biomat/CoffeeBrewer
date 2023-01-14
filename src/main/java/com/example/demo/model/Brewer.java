@@ -1,18 +1,13 @@
 package com.example.demo.model;
 
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter @Setter
 public class Brewer {
-  public static Coffee brewCoffee(Recipe recipe) {
+  public static Coffee brewCoffee(Recipe recipe, CoffeeType coffeeType) {
 
-
-    Coffee coffee = new Espresso();
+    Coffee coffee = new Espresso(coffeeType);
 
     for (int i = 0; i < recipe.getNeededSugar(); i++) {
       coffee = new Sugar(coffee);

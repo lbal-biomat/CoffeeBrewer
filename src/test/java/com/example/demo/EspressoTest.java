@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.controller.BrewerController;
 import com.example.demo.model.Coffee;
+import com.example.demo.model.CoffeeType;
 import com.example.demo.model.Espresso;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
@@ -40,7 +41,7 @@ class EspressoTest {
   @Test
   void shouldReturnCoffee() throws Exception {
     //arrange
-    Coffee coffee = new Espresso();
+    Coffee coffee = new Espresso(CoffeeType.ESPRESSO);
     String json = writer.writeValueAsString(coffee);
     MockHttpServletRequestBuilder request = MockMvcRequestBuilders
             .get("/coffee/{name}", "espresso");

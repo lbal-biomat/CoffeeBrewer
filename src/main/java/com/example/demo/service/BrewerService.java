@@ -18,6 +18,6 @@ public class BrewerService {
 
   public Coffee brewCoffee(CoffeeType type) {
     Recipe recipe = repoRecipies.getRecipe(type);
-    return Brewer.brewCoffee(recipe);
+    return Brewer.brewCoffee(recipe, type);
   }
 }
