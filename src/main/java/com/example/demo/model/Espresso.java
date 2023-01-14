@@ -7,12 +7,12 @@ import java.util.List;
 public class Espresso implements Coffee {
   private CoffeeType type;
   private Double cost;
-  private List<String> ingredients;
+  private String ingredients;
 
   public Espresso() {
     this.type = CoffeeType.ESPRESSO;
     this.cost = 3.50;
-    this.ingredients = new ArrayList<>();
+    this.ingredients = "";
   }
 
   public CoffeeType getType() {
@@ -23,7 +23,7 @@ public class Espresso implements Coffee {
     return this.cost;
   }
 
-  public List<String> getIngredients() {
+  public String getIngredients() {
     return this.ingredients;
   }
 

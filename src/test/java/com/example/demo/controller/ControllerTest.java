@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Brewer;
 import com.example.demo.model.Coffee;
 import com.example.demo.model.CoffeeType;
+import com.example.demo.model.Recipe;
 import com.example.demo.service.BrewerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +28,8 @@ class ControllerTest {
   @Test
   void testBrewCoffee() {
     // arrange
-    Coffee coffee = Brewer.brewCoffee(CoffeeType.ESPRESSO);
+    Recipe recipe = new Recipe(CoffeeType.ESPRESSO, 0, 0);
+    Coffee coffee = Brewer.brewCoffee(recipe);
     when(brewerService.brewCoffee(CoffeeType.ESPRESSO)).thenReturn(coffee);
 
 

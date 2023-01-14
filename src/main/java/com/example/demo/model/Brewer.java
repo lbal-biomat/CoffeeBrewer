@@ -11,19 +11,18 @@ import java.util.List;
 @Getter @Setter
 @NoArgsConstructor
 public class Brewer {
-  public static Coffee brewCoffee(CoffeeType coffeeType) {
+  public static Coffee brewCoffee(Recipe recipe) {
+
 
     Coffee coffee = new Espresso();
 
-    switch (coffeeType) {
-      case ESPRESSO:
-        return coffee;
-      case LATTE:
-        //
-      case CAPPUCCINO:
-        //
-      default:
-        throw new IllegalArgumentException("Unknown coffee type");
+    for (int i = 0; i < recipe.getNeededSugar(); i++) {
+      coffee = new Sugar(coffee);
     }
+    for (int i = 0; i < recipe.getNeededMilk(); i++) {
+      coffee = new Milk(coffee);
+    }
+    return coffee;
+
   }
 }

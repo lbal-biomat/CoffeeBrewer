@@ -1,7 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.controller.BrewerController;
+import com.example.demo.model.Brewer;
 import com.example.demo.model.Coffee;
+import com.example.demo.model.CoffeeType;
+import com.example.demo.model.Recipe;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -38,7 +41,8 @@ public class LatteTest {
   @Test
   void shouldReturnLatte() throws Exception {
     //arrange
-    Coffee coffee = new Latte();
+    Recipe recipe = new Recipe(CoffeeType.LATTE, 1, 2);
+    Coffee coffee = Brewer.brewCoffee(recipe);
     String json = writer.writeValueAsString(coffee);
     MockHttpServletRequestBuilder request = MockMvcRequestBuilders
             .get("/coffee/{name}", "latte");
