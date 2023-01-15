@@ -16,6 +16,11 @@ public class BrewerController {
     this.brewerService = brewerService;
   }
 
+  /**
+   * Brews a coffee of the given type.
+   * @param type The type of coffee to brew.
+   * @return A response entity with the brewed coffee in the body.
+   */
   @GetMapping("/coffee/{type}")
   public ResponseEntity<Coffee> brewCoffee(@PathVariable String type) {
     Coffee coffee = brewerService.brewCoffee(CoffeeType.valueOf(type.toUpperCase()));

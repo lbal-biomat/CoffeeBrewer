@@ -16,8 +16,13 @@ public class BrewerService {
     this.repoRecipies = repoRecipies;
   }
 
-  public Coffee brewCoffee(CoffeeType type) {
-    Recipe recipe = repoRecipies.getRecipe(type);
-    return Brewer.brewCoffee(recipe, type);
+  /**
+   * Brews a coffee of the given type.
+   * @param coffeeType The type of coffee to brew.
+   * @return The brewed coffee.
+   */
+  public Coffee brewCoffee(CoffeeType coffeeType) {
+    Recipe recipe = repoRecipies.getRecipe(coffeeType);
+    return Brewer.brewCoffee(recipe, coffeeType);
   }
 }

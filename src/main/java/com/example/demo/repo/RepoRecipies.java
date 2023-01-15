@@ -19,7 +19,11 @@ public class RepoRecipies {
         recipies.put(CoffeeType.LATTE, new Recipe(1, 2));
     }
 
-    public Recipe getRecipe(CoffeeType type) {
-        return recipies.get(type);
+    /**
+     * @param coffeeType The type of coffee to get the recipe for.
+     * @return The recipe for the coffeeType, containing the amount of sugar and milk needed.
+     */
+    public Recipe getRecipe(CoffeeType coffeeType) {
+        return recipies.get(coffeeType);
     }
 }
